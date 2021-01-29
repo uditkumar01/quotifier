@@ -9,19 +9,19 @@ html = urllib.request.urlopen(url).read()
 soup = BeautifulSoup(html, 'html.parser')
 z = 1
 quotes = []
-for section in soup.find_all(attrs={'class':'quoteText'}):
+for section in soup.find_all(attrs={'class': 'quoteText'}):
     q = {}
     # print("*"*10)
     # print(section.contents)
     # print("*"*10)
-    q["author"] = section.find(attrs={"class":"authorOrTitle"}).contents[0].strip().replace(',','')
+    q["author"] = section.find(
+        attrs={"class": "authorOrTitle"}).contents[0].strip().replace(',', '')
     s = str(section)
-    q["quote"] = s[s.find('“')+1:s.find('”')].replace("<br/>"," ")
-    if len(q["quote"])<=240:
-        quotes.append(q)
+    q["quote"] = s[s.find('“')+1:s.find('”')].replace("<br/>", " ")
+    quotes.append(q)
 print(len(quotes))
 
-with open("text/quotes.txt",'w') as inputFile:
+with open("text/quotes.txt", 'w') as inputFile:
     for q in quotes:
         inputFile.write(q["quote"]+" ~ "+q["author"]+"\n")
 
