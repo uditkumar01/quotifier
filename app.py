@@ -1,5 +1,5 @@
 from hand import begin_writing_text
-with open("quotes.txt",'r') as qoute:
+with open("text/quotes.txt",'r') as qoute:
     lines = qoute.readlines()
     for line in lines:
 
@@ -7,9 +7,9 @@ with open("quotes.txt",'r') as qoute:
             args = {
                 "text":line.split(" ~ ")[0],
                 "author":line.split(" ~ ")[1],
-                "image":"bg2.jpg",
+                "image":"background/bg2.jpg",
                 "color":"255 255 255",
-                "font":"LeagueSpartan-Bold.otf",
+                "font":"fonts/LeagueSpartan-Bold.otf",
                 "res":60
                 }
 

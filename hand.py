@@ -40,7 +40,7 @@ def draw_multiple_line_text(image, imgName, text, author, fontName, font, text_c
             break
     
     # placing author begin
-    font = ImageFont.truetype("author.otf", 50)
+    font = ImageFont.truetype("fonts/author.otf", 50)
     line = author
     line_width, line_height = font.getsize(line)
     w, h = draw.textsize(line, font=font)
@@ -50,7 +50,7 @@ def draw_multiple_line_text(image, imgName, text, author, fontName, font, text_c
             
     # placing logo begin
     line = "EduNil.com"
-    font = ImageFont.truetype("efont.otf", 50)
+    font = ImageFont.truetype("fonts/efont.otf", 50)
     line_width, line_height = font.getsize(line)
     w, h = draw.textsize(line, font=font)
     draw.text(((W - w) / 2, H-160), 
@@ -65,14 +65,14 @@ def save_img(num,image, res):
     # image.show()
     digest = ''.join(str(datetime.datetime.utcnow()).split())
     digest += str(secrets.token_hex(3))
-    image.save("images/ans"+str(digest)+".jpg", optimize = True,quality = res)
+    image.save("images/qoute"+str(digest)+".jpg", optimize = True,quality = res)
 
 def write(txt, author, imgName, color, fontName, res, num):
     # image = Image.new('RGB', (600, 800), color = (197,189,186))
     image = Image.open(imgName)
     im_resized = image.resize((1422,800), Image.ANTIALIAS)
-    im_resized.save("page0.png")
-    image = Image.open("page0.png")
+    im_resized.save("background/compressed_bg/page0.png")
+    image = Image.open("background/compressed_bg/page0.png")
     fontsize = 50  # starting font size
     font = ImageFont.truetype(fontName, fontsize)
 
