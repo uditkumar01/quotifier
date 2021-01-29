@@ -21,7 +21,7 @@ for section in soup.find_all(attrs={'class':'quoteText'}):
         quotes.append(q)
 print(len(quotes))
 
-with open("quotes.txt",'w') as inputFile:
+with open("text/quotes.txt",'w') as inputFile:
     for q in quotes:
         inputFile.write(q["quote"]+" ~ "+q["author"]+"\n")
 
