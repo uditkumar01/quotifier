@@ -63,7 +63,7 @@ def save_img(num,image, res):
     global total_pages
     total_pages = max(total_pages,num)
     # image.show()
-    digest = ''.join(str(datetime.datetime.utcnow()).split())
+    digest = ''.join(''.join(''.join(''.join(str(datetime.datetime.utcnow()).split()).split('.')).split('-')).split(':'))
     digest += str(secrets.token_hex(3))
     image.save("images/qoute"+str(digest)+".jpg", optimize = True,quality = res)
 
