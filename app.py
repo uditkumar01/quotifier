@@ -14,6 +14,7 @@ with open("text/quotes.txt", 'r') as qoute:
             # print(img_names)
             bg_img = img_names[random.randint(0,len(img_names)-1)].strip()
         print(bg_img,"bg")
+        print()
         if line.strip():
             args = {
                 "text": line.split(" ~ ")[0],

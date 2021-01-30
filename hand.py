@@ -40,20 +40,18 @@ def draw_multiple_line_text(image, imgName, text, author, fontName, fontSize, fo
                 # time.sleep(5)
                 if initial_height > 100:
                     if author_logo_gap >=130:
-                        print("Pushing text downward")
+                        print("Pushing text downward",author_logo_gap)
                         print()
                         author_logo_gap-=1
-                        print("Pushing text upward")
-                        print()
-                        write(text, author, imgName, text_color, fontName, fontSize, res, num, textwrapWidth, initial_height-10)
-                    elif author_logo_gap > 150:
-                        write(text, author, imgName, text_color, fontName, fontSize, res, num, textwrapWidth, initial_height-10)
+                    print("Pushing text upward",initial_height)
+                    print()
+                    write(text, author, imgName, text_color, fontName, fontSize, res, num, textwrapWidth, initial_height-10)
                 else:
-                    print("Reducing font size")
+                    print("Reducing font size",fontSize)
                     print()
                     wrap_width = textwrapWidth
                     if W-max_line_width >= 200:
-                        print("Increasing text warp width")
+                        print("Increasing text warp width",textwrapWidth)
                         print()
                         wrap_width+=3
                     write(text, author, imgName, text_color, fontName, fontSize-1, res, num, wrap_width, initial_height)
@@ -91,16 +89,14 @@ def draw_multiple_line_text(image, imgName, text, author, fontName, fontSize, fo
             # time.sleep(5)
             if initial_height >100:
                 if author_logo_gap >=130:
-                    print("Pushing text downward")
+                    print("Pushing text downward",author_logo_gap)
                     print()
                     author_logo_gap-=1
-                    print("Pushing text upward")
-                    print()
-                    write(text, author, imgName, text_color, fontName, fontSize, res, num, textwrapWidth, initial_height-10)
-                elif author_logo_gap > 150:
-                    write(text, author, imgName, text_color, fontName, fontSize, res, num, textwrapWidth, initial_height-10)
+                print("Pushing text upward",initial_height)
+                print()
+                write(text, author, imgName, text_color, fontName, fontSize, res, num, textwrapWidth, initial_height-10)
             else:
-                print("Reducing font size")
+                print("Reducing font size",fontSize)
                 print()
                 wrap_width = textwrapWidth
                 if W-max_line_width >= 200:
